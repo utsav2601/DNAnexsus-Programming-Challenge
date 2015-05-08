@@ -1,0 +1,53 @@
+1: Welcome to the DNAnexus programming challenge! There are four questions, arranged in order
+2: of difficulty. We suggest that you do the problems in the order in which they are given. You have
+3: two hours to complete as many of the problems as you can, and send us your code.
+4: We hope youâll find this to be a fun, challenging test of your skills. We understand that some
+5: people find these problems to be a bit dry, and maybe too simple. If you think so, great! Weâre
+6: looking for awesome coders like you. Even if you find these problems to be easy, your solutions
+7: still give us a lot of insight about your strengths, weaknesses, and coding style.
+8: If you find anything confusing, just try to solve the problem as best you can. There isnât
+9: necessarily a single ârightâ answer â we are interested in seeing how you approach solving
+10: these types of problems. Feel free to send us any feedback you have about these problems and
+11: suggestions for making it clearer!
+12: We are interested in your ability to write clean, correct code to solve the problem at hand. You
+13: may write the code in the language of your choice (please, nothing too exotic!), but it should be
+14: running code, not pseudocode. Youâre free to use standard library functions of the language
+15: youâre using, but donât use a function that directly solves the problem (use your judgement).
+16: Please send us your original source code, preferably with comments explaining what itâs doing.
+17: Although itâs not necessary, if you also created any test stubs and test data, feel free to send
+18: that as well, and donât forget the piece of code youâre proud of. Good luck!
+19: Problem 1: DNA sequence conversion
+20: DNA is a long molecule that lies inside the nucleus of a cell, and it can be thought of as a
+21: very long string consisting of characters in the alphabet {A, C, G, T}. DNA sequencing is the
+22: technology that enables reading from DNA molecules and converting them to strings on the
+23: output. We are interested in a technology that works in the following way: the DNA molecules
+24: in the input are fragmented into pieces of equal length L; each piece is then sequenced by the
+25: technology, and its content is encoded in the output. The particular encoding used in the output
+26: is the following:
+27: â The file contains multiple consecutive entries, one per piece.
+28: â Each piece is represented by L consecutive bytes (1 byte = 8 bits).
+29: â The first two (most significant) bits of each byte encode the DNA letter:
+30: â 00 represents A
+31: â 01 represents C
+32: â 10 represents G
+33: â 11 represents T
+34: â The last six (least significant) bits of each byte encode the confidence that the readout
+35: was correct, also known as the quality score. It is represented as an unsigned 6-bit
+36: integer in the range 0 to 63.
+37: Write a program that takes as input an encoded file as well as the number L, and converts it to a
+38: text file of the following format (known as the FASTQ format):
+39: â Each piece is represented by four lines:
+40: â The first line contains the word @READ_ followed by the piece index. The first
+41: piece has an index of 1, so its first line would be @READ_1
+42: â The second line contains L characters in the {A,C,G,T} alphabet, representing
+43: the DNA sequence of the piece.
+44: â The third line contains the word +READ_ followed by the piece index (e.g.,
+45: +READ_1).
+46: â The fourth line contains L characters, representing the quality scores of the
+47: piece. Each score is represented as an ASCII character in the range 33-96, by
+48: adding 33 to the original score. For example, if the original score is 0, it should be
+49: represented by the ASCII character 33 (â!â)
+50: Example input (for L=2) shown here in binary:
+51: 00000000 11100000 11000001 01111111
+52: Example output:
+53: @READ_1

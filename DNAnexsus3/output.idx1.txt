@@ -1,0 +1,53 @@
+54: AT
+55: +READ_1
+56: !A
+57: @READ_2
+58: TC
+59: +READ2
+60: "`
+61: Please note that input shall be a binary sequence of bytes -- not a string of â0â and â1â
+62: characters. An example input file can be downloaded from https://dnanexus.com/
+63: programming_challenges/dna_conversion_samples/input. This example file has 1680 bytes.
+64: One can generate different output with different L values. The example output for L = 7, 15, and
+65: 80 can also be downloaded from the following locations:
+66: L = 7: https://dnanexus.com/programming_challenges/dna_conversion_samples/output7
+67: L = 15: https://dnanexus.com/programming_challenges/dna_conversion_samples/output15
+68: L = 80: https://dnanexus.com/programming_challenges/dna_conversion_samples/output80
+69: Problem 2: Search
+70: You are given an array A of n integers. The elements of A are sorted in ascending order, and
+71: are not necessarily unique. You are also given a target integer x. Implement a search algorithm
+72: which finds a location j in the array such that all elements in the range A[0], â¦, A[j - 1] are
+73: strictly less than x, and all elements in the range A[j], â¦, A[n - 1] are greater than or equal to
+74: x. (Note that x itself need not appear in A for these conditions to be satisfied.) If no suitable
+75: location is found, return -1. Your solution should have runtime O(log n).
+76: Problem 3: Random line from a file
+77: You are given a very, very large plain text file where each line contains a plain text string. The
+78: file has at most 1 billion lines; lines may have different lengths, but each line has at most 1000
+79: characters. Your goal is to write a program that will print an arbitrary line from the file. Your
+80: program will be run many times (although you don't know exactly how many times it will be run
+81: in advance), and you donât know in advance which lines might be selected. Thus, your solution
+82: should be optimized to minimize the runtime for each additional execution. The first execution of
+83: the program may take longer than subsequent runs, and you may use additional disk storage to
+84: improve performance.
+85: Your program should take two command-line arguments: the path of the file from which to print
+86: lines, and the index of the line you want to print. Your program should write the line to standard
+87: output.
+88: Sample input/output:
+89: input_file.txt:
+90: apple
+91: banana
+92: orange
+93: lemon
+94: $ random_line input_file.txt 3
+95: on stderr: Writing index to input_file.txt.idx... done.
+96: lemon
+97: $ random_line input_file.txt 2
+98: orange
+99: $ random_line input_file.txt 0
+100: apple
+101: Problem 4: Algorithm
+102: You are given a sequence of N numbers s[1], s[2], ..., s[N]. A contiguous subsequence
+103: is defined as follows: for any i and j with 1 <= i <= j <= N, the sequence of numbers s[i],
+104: s[i+1], â¦, s[j]. Write a program that takes a sequence of numbers and finds the contiguous
+105: subsequence with the largest sum and outputs i and j. If there are multiple such subsequences,
+106: return the i and j for the shortest subsequence which occurs first in the original sequence. Try to
